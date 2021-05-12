@@ -1,6 +1,7 @@
 import java.util.Scanner;
-
-public class Main {
+import static org.junit.Assert.*;
+import org.junit.Test;
+public class calculator {
   public static void main(String[] args) {
 
     char operator;
@@ -20,23 +21,19 @@ public class Main {
     switch (operator) {
 
       case '+':
-        result = number1 + number2;
-        System.out.println(number1 + " + " + number2 + " = " + result);
+       Add(number1,number2);
         break;
 
       case '-':
-        result = number1 - number2;
-        System.out.println(number1 + " - " + number2 + " = " + result);
+       Subtract(number1,number2);
         break;
 
       case '*':
-        result = number1 * number2;
-        System.out.println(number1 + " * " + number2 + " = " + result);
+       Multiply(number1,number2);
         break;
 
       case '/':
-        result = number1 / number2;
-        System.out.println(number1 + " / " + number2 + " = " + result);
+       divide(number1,number2);
         break;
 
       default:
@@ -46,4 +43,30 @@ public class Main {
 
     input.close();
   }
+public double Add(double n1,double n2){
+return (n1+n2);
+}
+public double Subtract(double n1,double n2){
+return (n1-n2);
+}
+public double Multiply(double n1,double n2){
+return (n1*n2);
+}
+public double divide(double n1,double n2){
+return (n1/n2);
+}
+@Test
+public void addTest(){
+assertEquals(5.0,Add(2.0,3.0));
+}
+public void subtractTest(){
+assertEquals(1.0,subtract(3.0,2.0));
+}
+public void multiplyTest(){
+assertEquals(4.0,Add(2.0,2.0));
+}
+public void divideTest(){
+assertEquals(2.0,Add(6.0,3.0));
+}
+
 }
